@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>👑 Boss Panel</title>
+  <style>
+    body { background: #000; color: #fff; font-family: sans-serif; text-align: center; padding-top: 50px; }
+    button {
+      font-size: 1.5em;
+      margin: 20px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .v1 { background-color: #f39c12; }
+    .v2 { background-color: #e74c3c; }
+    .v3 { background-color: #9b59b6; }
+  </style>
+</head>
+<body>
+  <h1>🛠 BOSS ĐIỀU KHIỂN VIDEO</h1>
+  <p>⚠️ Lưu ý: Bản này chưa tích hợp cập nhật tự động GitHub (cần token)</p>
+  <p>👉 Hãy cập nhật file <code>status.txt</code> trên GitHub để chọn video bạn muốn hiển thị</p>
+</body>
+</html>
