@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>👑 Boss Panel</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 { font-size: 2.5em; margin-bottom: 20px; }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .v1 { background-color: #f39c12; }
+    .v2 { background-color: #e74c3c; }
+    .v3 { background-color: #9b59b6; }
+    button:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <h1>🎬 Boss Control Panel</h1>
+  <button class="v1" onclick="play(1)">▶ Phát Video 1</button>
+  <button class="v2" onclick="play(2)">▶ Phát Video 2</button>
+  <button class="v3" onclick="play(3)">▶ Phát Video 3</button>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyC4-EXAMPLE",
+      authDomain: "bossvideo.firebaseapp.com",
+      databaseURL: "https://bossvideo-default-rtdb.firebaseio.com",
+      projectId: "bossvideo",
+      storageBucket: "bossvideo.appspot.com",
+      messagingSenderId: "000000000000",
+      appId: "1:000000000000:web:example"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    var db = firebase.database();
+    function play(v) {
+      db.ref("/videoStatus").set(v);
+      alert("🔥 Video " + v + " đã được phát!");
+    }
+  </script>
+</body>
+</html>
