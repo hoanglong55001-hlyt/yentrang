@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 Viewer</title>
+  <script>
+    async function checkStatus() {
+      const res = await fetch("https://raw.githubusercontent.com/hoanglong55001-hlyt/yentrang/main/status.txt?" + new Date().getTime());
+      const code = await res.text();
+      let url = "";
+      if (code.trim() === "1") url = "https://drive.google.com/file/d/1Fg3xWYT1AtUDgvOQCJD4oCZ6VmeBGKlh/view";
+      else if (code.trim() === "2") url = "https://drive.google.com/file/d/1nA7CBVuVpeoPnsfVuQqwo3cZZQqoa0QJ/view";
+      else if (code.trim() === "3") url = "https://drive.google.com/file/d/17faCEj1ext55_-5R6pSyTu3baYducB8B/view";
+      if (url) window.location.href = url;
+    }
+    setInterval(checkStatus, 1500);
+  </script>
+  <style>
+    body { background: #111; color: #fff; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; }
+    h1 { font-size: 1.8em; }
+  </style>
+</head>
+<body>
+  <h1>🎁 Vui lòng chờ Boss phát video...</h1>
+</body>
+</html>
